@@ -1,0 +1,13 @@
+name: sample-workflow
+on: [push]
+jobs:
+  explore-first-github-workflow:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "Primer Paso"
+      - name: Check out repository code
+        uses: actions/checkout@v2
+      - name: List fils in the repository
+        run: |
+          ls ${{ github.wotkspace }}
+      - run: echo "job status ${{ job.status }}"
